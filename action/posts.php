@@ -3,8 +3,8 @@
 	include_once("../inc/connection.php");
 	$obj=new connection();
 	$obj->connect();
-	 
-if(isset($_POST["type"]) && isset($_POST["type"])="all")
+	 $returnArray = array();
+if(isset($_POST["type"]) && $_POST["type"] == "all")
 {
 	$posts = array();
 	$obj->query="select p.*,i.image_url as image,i.thumb_url as thumb from posts as p LEFT JOIN images as i ON i.post_id = p.id";
@@ -28,7 +28,7 @@ if(isset($_POST["type"]) && isset($_POST["type"])="all")
 	}
 }
 
-if(isset($_POST["type"]) && isset($_POST["type"])="id")
+if(isset($_POST["type"]) && $_POST["type"] == "id")
 {
 	$posts = array();
 	$obj->query="select p.*,i.image_url as image,i.thumb_url as thumb from posts as p LEFT JOIN images as i ON i.post_id = p.id WHERE p.id = '".$_POST['post_id']."'";

@@ -52,7 +52,7 @@ if(isset($_POST["access_token"]))
 				'email' => $email,
 				'image_url' => $_POST["image_url"],
 				'access_token' => $_POST['access_token']
-				)
+				);
 		}else{
 			$returnArray = array(
 				'status' => "error",
@@ -65,7 +65,6 @@ if(isset($_POST["access_token"]))
 	$returnArray = array(
 				'status' => "error",
 				'message' => 'no access token given',
-				'access_token' => $_POST['access_token']
 				);
 }
 echo json_encode($returnArray);
